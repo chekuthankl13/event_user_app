@@ -60,93 +60,94 @@ class _EventScreenState extends State<EventScreen> {
                 onTap: () async {
                   await viewDialog(context, data);
                 },
-                child: Container(
-                  margin: EdgeInsets.all(5),
-                  padding: EdgeInsets.all(10),
-                  // height: 100,
-                  width: sW(context),
-                  decoration: BoxDecoration(
-                    color: Config.orangeAccent,
-                    borderRadius: BorderRadius.circular(8),
-                    boxShadow: [
-                      // BoxShadow(color: Config.violetClr, blurRadius: .7),
-                    ],
+                child: Card(
+                  elevation: 5,
+                  shadowColor: Colors.white,
+                  surfaceTintColor: Colors.white,
+                  color: Color.fromARGB(255, 254, 254, 255),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadiusGeometry.circular(8),
                   ),
-                  child: Row(
-                    spacing: 10,
-                    children: [
-                      Container(
-                        height: 60,
-                        width: 60,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: clr[index],
-                        ),
-                        alignment: Alignment.center,
-                        child: Text(
-                          data.title.split("")[0].toUpperCase(),
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 25,
-                            fontWeight: FontWeight.bold,
+                  margin: EdgeInsets.all(5),
+                  
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      spacing: 10,
+                      children: [
+                        Container(
+                          height: 60,
+                          width: 60,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: clr[index],
+                          ),
+                          alignment: Alignment.center,
+                          child: Text(
+                            data.title.split("")[0].toUpperCase(),
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
-                      ),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          spacing: 5,
-                          children: [
-                            Row(
-                              spacing: 2,
-                              children: [
-                                Icon(Icons.numbers, color: Config.greyClr),
-                                Text(
-                                  data.title,
-                                  maxLines: 2,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Row(
-                              spacing: 2,
-                              children: [
-                                Icon(
-                                  Icons.location_on_outlined,
-                                  color: Config.greyClr,
-                                ),
-                                Expanded(
-                                  child: Text(
-                                    data.location,
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            spacing: 5,
+                            children: [
+                              Row(
+                                spacing: 2,
+                                children: [
+                                  Icon(Icons.numbers, color: Config.greyClr),
+                                  Text(
+                                    data.title,
                                     maxLines: 2,
                                     overflow: TextOverflow.ellipsis,
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
-                                ),
-                              ],
-                            ),
-                            Row(
-                              spacing: 2,
-                              children: [
-                                Icon(
-                                  Icons.calendar_month_outlined,
-                                  color: Config.greyClr,
-                                ),
-                                Text(
-                                  data.date,
-                                  style: TextStyle(
-                                    color: Config.redAccentLigthClr,
+                                ],
+                              ),
+                              Row(
+                                spacing: 2,
+                                children: [
+                                  Icon(
+                                    Icons.location_on_outlined,
+                                    color: Config.greyClr,
                                   ),
-                                ),
-                              ],
-                            ),
-                          ],
+                                  Expanded(
+                                    child: Text(
+                                      data.location,
+                                      maxLines: 2,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                spacing: 2,
+                                children: [
+                                  Icon(
+                                    Icons.calendar_month_outlined,
+                                    color: Config.greyClr,
+                                  ),
+                                  Text(
+                                    data.date,
+                                    style: TextStyle(
+                                      color: Config.redAccentLigthClr,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               );

@@ -6,9 +6,25 @@ class Config {
 
   static Color grey2Clr = Colors.grey.shade600;
 
-  // static const violetClr = Color.fromARGB(255, 0, 35, 95);
+
 
   static const violetClr = Color.fromARGB(255, 67, 129, 180);
+
+
+static LinearGradient get primaryToSecondaryGradient {
+    return LinearGradient(
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
+      colors: [
+       Color.fromARGB(255, 67, 129, 180),
+      Color.fromARGB(255, 59, 116, 162),
+       Colors.white,
+        Colors.white
+      ],
+      stops: [0.0, 0.5, 0.5, 1.0],
+    );
+  }
+
 
   static const orangeAccent =  Color.fromRGBO(255, 245, 238, 1);
 
